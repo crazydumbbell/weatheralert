@@ -82,7 +82,9 @@ const App = () => {
 
   // 위의 2개가 실행되기위해서는 long lat 둘다 있어야 된다. 근데 값이 없음. 위에 getGeolocation으로 가져오는데 밑의 useeffect가 동시에 일어나기 때문에
   //오류가 발생하는거임 그래서 뒤의 useEffect getWeather를 딜레이시키면 해결됨 이때 useEffet의 의존성 배열을 사용하면됨,, 렌더링시에 실행시키지 말고 lat long의 값의 변화를 감지하고 실행시키면됨
-
+  useEffect(() => {
+    console.log(process.env.REACT_APP_WEATHER_KEY);
+  }, []);
   return (
     <div
       className={
